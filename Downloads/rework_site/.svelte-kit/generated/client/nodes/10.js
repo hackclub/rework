@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/submitting/submission-guidelines/+page.svelte";
