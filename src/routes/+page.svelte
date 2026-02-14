@@ -1,73 +1,80 @@
 <script>
-	import { faqs } from '$lib/faq-data.js';
+	import { faqs } from "$lib/faq-data.js";
 
 	const examples = {
 		yes: [
 			{
-				title: 'Custom Toolhead',
-				desc: 'Design a custom toolhead for your printer for a new hotend, extruder, or fan combo',
-				image: 'https://cdn.hackclub.com/019c3430-8fea-797a-81c3-f19bf5697c49/image.png'
-			},
-			{
-				title: 'Linear Rail Upgrade',
-				desc: 'Replace V-Wheels with linear rails for extra rigidity and precision',
+				title: "Custom Toolhead",
+				desc: "Design a custom toolhead for your printer for a new hotend, extruder, or fan combo",
 				image:
-					'https://cdn.hackclub.com/019c3431-823d-704e-9381-72d970f71092/screenshot_2026-02-06_at_1.22.54___pm.png'
+					"https://cdn.hackclub.com/019c3430-8fea-797a-81c3-f19bf5697c49/image.png",
 			},
 			{
-				title: 'Filament Sensor',
-				desc: 'Add a filament runout sensor to your printer to avoid failed prints',
-				image: 'https://cdn.hackclub.com/019c3433-37b6-7fa2-9e6d-4194b472b820/image.png'
+				title: "Linear Rail Upgrade",
+				desc: "Replace V-Wheels with linear rails for extra rigidity and precision",
+				image:
+					"https://cdn.hackclub.com/019c3431-823d-704e-9381-72d970f71092/screenshot_2026-02-06_at_1.22.54___pm.png",
 			},
 			{
-				title: 'Multi Material Upgrade',
-				desc: 'Design a mod to add multi-material printing capabilities to your printer',
-				image: 'https://cdn.hackclub.com/019c3434-4cec-7605-b07a-70ec5c37df4a/image.png'
-			}
+				title: "Filament Sensor",
+				desc: "Add a filament runout sensor to your printer to avoid failed prints",
+				image:
+					"https://cdn.hackclub.com/019c3433-37b6-7fa2-9e6d-4194b472b820/image.png",
+			},
+			{
+				title: "Multi Material Upgrade",
+				desc: "Design a mod to add multi-material printing capabilities to your printer",
+				image:
+					"https://cdn.hackclub.com/019c3434-4cec-7605-b07a-70ec5c37df4a/image.png",
+			},
 		],
 		no: [
 			{
-				title: 'Installing Klipper',
+				title: "Installing Klipper",
 				desc: "Software-only changes don't count (but Klipper + hardware does!)",
-				image: 'https://cdn.hackclub.com/019c3434-fc43-73d0-a97e-895a068dfb5f/image.png'
+				image:
+					"https://cdn.hackclub.com/019c3434-fc43-73d0-a97e-895a068dfb5f/image.png",
 			},
 			{
-				title: 'Tuning Slicer Settings',
-				desc: 'Changing temps, speeds, or flow in your slicer does not qualify as a mod',
-				image: 'https://cdn.hackclub.com/019c3437-1e08-7d4b-9917-86b944d9aeb8/image.png'
+				title: "Tuning Slicer Settings",
+				desc: "Changing temps, speeds, or flow in your slicer does not qualify as a mod",
+				image:
+					"https://cdn.hackclub.com/019c3437-1e08-7d4b-9917-86b944d9aeb8/image.png",
 			},
 			{
-				title: 'Pre-made Kits',
-				desc: 'Your mods must be designed and built by you, not a pre-made upgrade kit',
-				image: 'https://cdn.hackclub.com/019c3439-9f80-7ab3-87a8-e38dc79bf646/image.png'
+				title: "Pre-made Kits",
+				desc: "Your mods must be designed and built by you, not a pre-made upgrade kit",
+				image:
+					"https://cdn.hackclub.com/019c3439-9f80-7ab3-87a8-e38dc79bf646/image.png",
 			},
 			{
-				title: 'High Voltage Upgrades (60V+)',
-				desc: 'Please avoid high voltage modifications for safety reasons, please contact us if unsure!',
-				image: 'https://cdn.hackclub.com/019c343a-75af-7671-a673-8b43a4c3f082/image.png'
-			}
-		]
+				title: "High Voltage Upgrades (60V+)",
+				desc: "Please avoid high voltage modifications for safety reasons, please contact us if unsure!",
+				image:
+					"https://cdn.hackclub.com/019c343a-75af-7671-a673-8b43a4c3f082/image.png",
+			},
+		],
 	};
 
-	let email = '';
-	let submitMessage = '';
+	let email = "";
+	let submitMessage = "";
 
 	async function handleEmailSubmit() {
 		try {
-			const response = await fetch('/api/signup', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, timestamp: new Date().toISOString() })
+			const response = await fetch("/api/signup", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email, timestamp: new Date().toISOString() }),
 			});
 
 			if (response.ok) {
-				submitMessage = '✓ Email Submitted! Check back soon for instructions!';
-				email = '';
+				submitMessage = "✓ Email Submitted! Check back soon for instructions!";
+				email = "";
 			} else {
-				submitMessage = '✗ Something went wrong. Try again!';
+				submitMessage = "✗ Something went wrong. Try again!";
 			}
 		} catch (error) {
-			submitMessage = '✗ Error submitting. Try again!';
+			submitMessage = "✗ Error submitting. Try again!";
 		}
 	}
 </script>
@@ -82,6 +89,8 @@
 			<div class="logo">REWORK</div>
 			<div class="tagline">DESIGN A MOD FOR YOUR 3D PRINTER.</div>
 			<div class="tagline">GET A GRANT TO REWORK IT.</div>
+			<a href="https://hackclub.slack.com" class="cta-button">HACK CLUB SLACK</a
+			>
 
 			<div class="hero-stats">
 				<div class="stat">
@@ -95,29 +104,40 @@
 			</div>
 		</div>
 		<div class="example_media">
-			<img src="/examplemod.png" alt="Example mod" class="example_image" aria-hidden="true" />
+			<img
+				src="/examplemod.png"
+				alt="Example mod"
+				class="example_image"
+				aria-hidden="true"
+			/>
 			<p class="example_image_caption">This used to be a Creality Ender 3! ⤴</p>
 		</div>
 	</header>
 	<div class="email-signup">
 		<p class="signup-text">Join the Hack Club Slack to get started!</p>
-		<form on:submit|preventDefault={handleEmailSubmit}>
-			<input type="email" placeholder="Enter your email" bind:value={email} required />
+		<button>Join Slack</button>
+		<!-- <form on:submit|preventDefault={handleEmailSubmit}>
+			<input
+				type="email"
+				placeholder="Enter your email"
+				bind:value={email}
+				required
+			/>
 			<button type="submit">Join Rework</button>
 		</form>
 		{#if submitMessage}
 			<p class="submit-message">{submitMessage}</p>
-		{/if}
+		{/if} -->
 	</div>
 	<section class="intro">
 		<h2>WHAT IS THIS?</h2>
 		<p>
-			Hack Club Rework gives you <strong>$75 + exclusive free filament</strong> to physically modify your
-			3D printer.
+			Hack Club Rework gives you <strong>$75 + exclusive free filament</strong> to
+			physically modify your 3D printer.
 		</p>
 		<p>
-			Got an old Ender 3? Make it print faster. Got a Bambu? Hack it and add custom features. Have a
-			unique idea? Make it happen. <strong
+			Got an old Ender 3? Make it print faster. Got a Bambu? Hack it and add
+			custom features. Have a unique idea? Make it happen. <strong
 				>Rework is made for all hardware based 3d printer mods</strong
 			>
 		</p>
@@ -131,7 +151,10 @@
 	<section class="examples-section">
 		<h2>WHAT COUNTS AS A MOD?</h2>
 		<p class="section-intro">
-			Your project needs to involve <strong>actual hardware modifications</strong> designed by you.
+			Your project needs to involve <strong
+				>actual hardware modifications</strong
+			>
+			designed by you. <a href="/examples">View examples here</a>
 		</p>
 
 		<div class="examples-grid">
@@ -494,7 +517,7 @@
 		background: rgba(255, 107, 53, 0.1);
 		color: var(--accent-primary);
 		text-decoration: none;
-		font-family: 'Courier New', monospace;
+		font-family: "Courier New", monospace;
 		transition: all 0.3s;
 		text-transform: uppercase;
 		letter-spacing: 3px;
@@ -556,7 +579,7 @@
 		background: var(--bg-secondary);
 		border: 2px solid var(--border-color);
 		color: var(--text-primary);
-		font-family: 'Courier New', monospace;
+		font-family: "Courier New", monospace;
 		font-size: 1rem;
 		transition: all 0.3s;
 	}
@@ -571,7 +594,7 @@
 		background: rgba(255, 107, 53, 0.1);
 		border: 2px solid var(--accent-primary);
 		color: var(--accent-primary);
-		font-family: 'Courier New', monospace;
+		font-family: "Courier New", monospace;
 		font-size: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
