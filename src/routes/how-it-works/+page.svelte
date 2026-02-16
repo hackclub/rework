@@ -21,6 +21,9 @@
 					<h3>Design Your Mod</h3>
 					<p>Come up with a hardware mod for your 3D printer. Design it in CAD using the program of your choice.</p>
 					<ul>
+						<li>Pick a mod idea that excites you</li>
+						<li>Create a Github Repo for your mod</li>
+						<li>Submit your mod to the <strong><a href="https://forms.hackclub.com/rework-create">Create a Project</a></strong> form</li>
 						<li>Design your mod</li>
 						<li>Journal your design process in your JOURNAL.md</li>
 					</ul>
