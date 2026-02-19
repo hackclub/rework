@@ -1,6 +1,9 @@
 <script>
 	import { faqs } from "$lib/faq-data.js";
 
+	/** @type {import('./$types').PageData} */
+	export let data;
+
 	const examples = {
 		yes: [
 			{
@@ -227,6 +230,16 @@
 	<footer>
 		<p>A HACK CLUB PROGRAM</p>
 		<p class="footer-sub">Questions? Join the Hack Club Slack.</p>
+		{#if data.commitSha}
+			<p class="footer-commit">
+				deployed commit:
+				{#if data.commitUrl}
+					<a href={data.commitUrl} target="_blank" rel="noopener noreferrer">{data.commitSha.slice(0, 7)}</a>
+				{:else}
+					{data.commitSha.slice(0, 7)}
+				{/if}
+			</p>
+		{/if}
 	</footer>
 </div>
 
@@ -552,6 +565,21 @@
 
 	.footer-sub {
 		font-size: 0.9rem;
+	}
+
+	.footer-commit {
+		font-size: 0.8rem;
+		margin-top: 8px;
+		opacity: 0.6;
+	}
+
+	.footer-commit a {
+		color: var(--accent-primary);
+		text-decoration: none;
+	}
+
+	.footer-commit a:hover {
+		text-decoration: underline;
 	}
 
 	.email-signup {
