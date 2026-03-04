@@ -78,7 +78,7 @@
 	<section class="submit-section">
 		<h2>Ready to Submit?</h2>
 		<p>When you have completed all of these requirements, submit your project:</p>
-		<a href="#" class="submit-button">SUBMIT YOUR PROJECT</a>
+		<a href="https://forms.hackclub.com/rework-submissions" class="submit-button" target="_blank" rel="noopener noreferrer">SUBMIT YOUR PROJECT</a>
 	</section>
 </div>
 
