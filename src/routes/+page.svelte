@@ -145,7 +145,7 @@
 			>
 		</p>
 		<p>
-			Design submissions for Rework end on March 6th, 2026. <strong
+			Design submissions for Rework end on March 20th, 2026. <strong
 				>Get started early and post your progress in the Hack Club Slack!</strong
 			>
 		</p>
